@@ -1,0 +1,11 @@
+{
+  "name": "scah-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for Sour Cream and Hive.",
+  "main": "app.js",
+  "author": "Ellzord",
+  "dependencies": {
+    "discord.js": "latest",
+    "dotenv": "^6.1.0"
+  }
+}

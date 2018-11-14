@@ -2,6 +2,8 @@ module.exports = [
     {
         // scah 2
         id: '496341808864034816',
+        general: '496341808864034818',
+        setup: '510992801803010049',
         messages: [
             {
                 // monopoly
@@ -23,6 +25,8 @@ module.exports = [
     {
         // scah
         id: '382209538268594186',
+        general: '382534929315135489',
+        setup: '511974215235403827',
         messages: [
             {
                 // announcements

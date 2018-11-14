@@ -17,15 +17,27 @@ client.on('raw', ev => {
             client.guilds.get(guild.id)
                 .members.get(ev.d.user_id)
                 .addRole(role.role)
-                .catch(ex => console.log(ex))
+                .catch(ex => console.error(ex))
         }
         else if (ev.t === 'MESSAGE_REACTION_REMOVE') {
             client.guilds.get(guild.id)
                 .members.get(ev.d.user_id)
                 .removeRole(role.role)
-                .catch(ex => console.log(ex))
+                .catch(ex => console.error(ex))
         }
     }
+});
+
+client.on('guildMemberAdd', m => {
+    const guild = roles.find(e => e.id === m.guild.id);
+    if (!guild) return;
+
+    const general = client.channels.get(guild.general);
+    const setup = client.channels.get(guild.setup);
+    if (!general || !setup) return;
+
+    general.send(`Hello ${m.user}, please go to ${setup} to let me know what settings you would like.`).catch(ex => console.error(ex));
+
 });
 
 client.on('ready', () => {

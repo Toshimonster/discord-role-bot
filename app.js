@@ -36,8 +36,8 @@ client.on('guildMemberAdd', m => {
     const setup = client.channels.get(guild.setup);
     if (!general || !setup) return;
 
-    general.send(`Hello ${m.user}, please go to ${setup} to let me know what settings you would like.`).catch(ex => console.error(ex));
-
+    general.send(`Hello ${m.user}, please go to ${setup} to let me know what settings you would like.`)
+        .catch(ex => console.error(ex));
 });
 
 client.on('ready', () => {
